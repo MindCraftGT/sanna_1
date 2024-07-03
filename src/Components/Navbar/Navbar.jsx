@@ -42,39 +42,41 @@ const Navbar = () => {
 
     return (
         <div>
-            <nav className='sticky top-0 bg-white-500 p-1 border-b-1 border-gray-200 shadow-md'>
-                <div className="flex items-center justify-between mx-6 mr-24">
-                    <div className='flex gap-4 sm:flex-row items-center'>
-                        <div className='text-green-700 text-2xl font-bold sm:ml-16 flex-shrink-0 mb-4 sm:mb-0'>
+            <nav className='sticky top-0 bg-white-500 p-1 border-b-3 border-gray-200 shadow-md'>
+                <div className="flex items-center justify-between mx-6 mr-24 gap -inset-4">
+                    <div className='flex gap-20 sm:flex-row items-center'>
+                        <div className='text-green-700 text-2xl font-bold sm:ml-16 flex-shrink-0 sm:mb-0'>
                             <Link to="/home">Sanna</Link>
                         </div>
-                        <div className='flex-grow md:flex-grow-0 md:w-96'>
-                            <input className='rounded-lg py-2 w-full h-8 focus:outline-none bg-green-50 px-3' type="text" placeholder='Search' />
+                        <div className='flex flex-row flex-grow md:flex-grow-0 md:w-96 sm:m-0 md:'>
+                            <input className='rounded-lg py-2 w-full h-8 focus:outline-none bg-green-50 px-3 text-center' type="text" placeholder='Search' />
                         </div>
                     </div>
-                    <ul className='hidden md:flex space-x-8'>
-                        <li className='text-base hover:cursor-pointer px-3 py-2 rounded-lg'>
-                            <Link to="/messaging" className='flex flex-col items-center text-gray-700 text-sm hover:text-green-700'>
-                                <FontAwesomeIcon icon={faEnvelope} />
-                                <span className='text-sm'>Messages</span>
-                            </Link>
-                        </li>
-                        <li className='text-base hover:cursor-pointer px-3 py-2 rounded-lg'>
-                            <Link to="/notification" className='flex flex-col items-center text-gray-700 text-sm hover:text-green-700 relative'>
-                                <FontAwesomeIcon icon={faBell} />
-                                <span className='text-sm'>Notification</span>
-                                {notificationCount > 0 &&
-                                    <span className="absolute top-0 right-0 text-tiny bg-red-500 text-white rounded-full px-1">{notificationCount}</span>
-                                }
-                            </Link>
-                        </li>
-                        <li className='text-base hover:cursor-pointer px-3 py-2 rounded-lg'>
-                            <Link to="/profile" className='flex flex-col items-center text-gray-700 text-sm hover:text-green-700'>
-                                <FontAwesomeIcon icon={faUser} />
-                                <span className='text-sm'>Profile</span>
-                            </Link>
-                        </li>
-                    </ul>
+                    <div className='flex flex-row ml-3'>
+                        <ul className='hidden md:flex space-x-8'>
+                            <li className='text-base hover:cursor-pointer px-3 py-2 rounded-lg'>
+                                <Link to="/messaging" className='flex flex-col items-center text-gray-700 text-sm hover:text-green-700'>
+                                    <FontAwesomeIcon icon={faEnvelope} />
+                                    <span className='text-sm'>Messages</span>
+                                </Link>
+                            </li>
+                            <li className='text-base hover:cursor-pointer px-3 py-2 rounded-lg'>
+                                <Link to="/notification" className='flex flex-col items-center text-gray-700 text-sm hover:text-green-700 relative'>
+                                    <FontAwesomeIcon icon={faBell} />
+                                    <span className='text-sm'>Notification</span>
+                                    {notificationCount > 0 &&
+                                        <span className="absolute top-0 right-0 text-tiny bg-red-500 text-white rounded-full px-1">{notificationCount}</span>
+                                    }
+                                </Link>
+                            </li>
+                            <li className='text-base hover:cursor-pointer px-3 py-2 rounded-lg'>
+                                <Link to="/profile" className='flex flex-col items-center text-gray-700 text-sm hover:text-green-700'>
+                                    <FontAwesomeIcon icon={faUser} />
+                                    <span className='text-sm'>Profile</span>
+                                </Link>
+                            </li>
+                        </ul>
+                    </div>
 
                     <div className='hidden md:flex items-center border-r border-l border-gray-500 px-3'>
                         <Link to="/cross-sell">
